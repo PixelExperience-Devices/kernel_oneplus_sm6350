@@ -147,3 +147,4 @@ clang-llvm/
 error.log
 out/
 scripts/ufdt/
+env/

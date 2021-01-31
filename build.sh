@@ -94,6 +94,9 @@ KBUILD_BUILD_HOST=$(uname -a | awk '{print $2}')
 CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 export KBUILD_BUILD_HOST CI_BRANCH
 
+virtualenv --python=python2 env
+source env/bin/activate
+
 ## Check for CI
 if [ -n "$CI" ]
 then
