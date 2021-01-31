@@ -142,3 +142,8 @@ kernel/configs/android-*.cfg
 # Tech package directories
 #techpack/
 
+AnyKernel3/
+clang-llvm/
+error.log
+out/
+scripts/ufdt/
