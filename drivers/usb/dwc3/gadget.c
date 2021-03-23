@@ -917,12 +917,6 @@ static void dwc3_stop_active_transfers_to_halt(struct dwc3 *dwc)
 		}
 	}
 
-	while (!list_empty(&dep->cancelled_list)) {
-		req = next_request(&dep->cancelled_list);
-
-		dwc3_gadget_giveback(dep, req, -ESHUTDOWN);
-	}
-
 	dbg_log_string("DONE");
 }
 
