@@ -111,9 +111,9 @@ int __cap_capable(const struct cred *cred, struct user_namespace *targ_ns,
 }
 
 int cap_capable(const struct cred *cred, struct user_namespace *targ_ns,
-		int cap, int audit)
+		int cap, unsigned int opts)
 {
-	int ret = __cap_capable(cred, targ_ns, cap, audit);
+	int ret = __cap_capable(cred, targ_ns, cap, opts);
 
 #ifdef CONFIG_ANDROID_PARANOID_NETWORK
 	if (ret != 0 && cap == CAP_NET_RAW && in_egroup_p(AID_NET_RAW)) {
