@@ -407,7 +407,7 @@ static void cqhci_off(struct mmc_host *mmc)
 			break;
 	}
 
-	if (timed_out && !(reg & CQHCI_HALT))
+	if (timed_out)
 		pr_err("%s: cqhci: CQE stuck on\n", mmc_hostname(mmc));
 	else
 		pr_debug("%s: cqhci: CQE off\n", mmc_hostname(mmc));
